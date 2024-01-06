@@ -1,0 +1,32 @@
+[
+    {
+        "itemName": "sandwitch",
+        "price": 70,
+        "quantity": 10
+    },
+    {
+        "itemName": "pizza",
+        "price": 150,
+        "quantity": 20
+    },
+    {
+        "itemName": "burger",
+        "price": 60,
+        "quantity": 30
+    },
+    {
+        "itemName": "momos",
+        "price": 70,
+        "quantity": 20
+    },
+    {
+        "itemName": "parata",
+        "price": 20,
+        "quantity": 50
+    },
+    {
+        "itemName": "dabeli",
+        "price": 40,
+        "quantity": 70
+    }
+]
