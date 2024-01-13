@@ -15,11 +15,8 @@ const menuSchema = new mongoose.Schema({
     price: {
         type: Number,
         required: true,
-    },
-    quantity: {
-        type: Number,
-        required: true,
-    },
+    }
+    
 
 });
 // Collection will be created with Menu
