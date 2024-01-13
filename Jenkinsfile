@@ -28,37 +28,37 @@ pipeline {
 
         stage('Pre-cleanup') {
             steps {
-                    sh 'rm -rf package-lock.json; cd continuous_integration; rm -rf ./node_modules; rm -rf package-lock.json;'
+                    sh 'rm -rf package-lock.json; rm -rf ./node_modules; rm -rf package-lock.json;'
             }
         }
 
         stage('Build') {
             steps {
-                sh 'cd continuous_integration; npm install;'
+                sh 'npm install;'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'cd continuous_integration; npm test;'
+                sh 'npm test;'
             }
         }
 
         stage('BuildDockerImage') {
             steps {
-                sh 'cd continuous_integration; docker build -t yogesh071/cont-i-img:v4 .'
+                sh 'docker build -t yogesh071/cont-i-img:v4 .'
             }
         }
 
         stage('DockerLogin') {
             steps {
-                sh 'cd continuous_integration; echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
             }
         }
 
         stage('PushDockerImage') {
             steps {
-                sh 'cd continuous_integration; docker push yogesh071/cont-i-img:v4'
+                sh 'docker push yogesh071/cont-i-img:v4'
             }
         }
     }
